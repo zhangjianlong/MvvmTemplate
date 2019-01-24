@@ -1,0 +1,14 @@
+<resources>
+	<!--pickerview-->
+	<string name="pickerview_cancel">cancel</string>
+	<string name="pickerview_submit">sure</string>
+	<string name="pickerview_year">year</string>
+	<string name="pickerview_month">mouth</string>
+	<string name="pickerview_day">day</string>
+	<string name="pickerview_hours">hour</string>
+	<string name="pickerview_minutes">minute</string>
+	<string name="pickerview_seconds">second</string>
+
+	<string name="app_name">baseble</string>
+
+</resources>

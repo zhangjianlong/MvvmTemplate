@@ -1,0 +1,549 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/app.theme.colorPrimary</item>
+        <item name="actionMenuTextColor">@color/app.text</item>
+        <!--状态栏颜色-->
+        <item name="colorPrimaryDark">@color/app.theme.colorPrimaryDark</item>
+        <!--控制各个控件被选中时的颜色-->
+        <item name="colorAccent">@color/app.theme.colorAccent</item>
+        <!--页面背景色-->
+        <item name="android:windowBackground">@color/app.theme.background_f7f7f7</item>
+        <!--底部导航栏颜色-->
+        <!--<item name="android:navigationBarColor"></item>-->
+        <!--Appbar背景色-->
+        <item name="android:colorPrimary">@color/app.theme.colorPrimaryDark</item>
+        <!--ToolBar上的Title颜色-->
+        <item name="android:textColorPrimary">@color/app.theme.background</item>
+        <!--各个控制控件的默认颜色-->
+        <item name="android:colorControlNormal">@color/app.theme.background_dadada</item>
+    </style>
+
+
+
+
+
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/slide_left_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/slide_left_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/slide_right_out</item>
+    </style>
+
+
+    <style name="BaseDialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <!--边框-->
+        <item name="android:windowNoTitle">true</item>
+        <!--无标题-->
+        <item name="android:windowIsFloating">true</item>
+        <!--是否浮现在activity之上-->
+        <item name="android:windowContentOverlay">@null</item>
+        <!-- 对话框是否有遮盖 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!--半透明-->
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <!--背景透明-->
+        <item name="android:backgroundDimEnabled">true</item>
+        <!--背景模糊-->
+    </style>
+
+
+
+    <style name="App.Theme" parent="AppTheme">
+        <!--no actionbar and title-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <!--actionbar text color-->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance">
+        <!--<item name="fontPath">@string/app.font.roboto.monospace.regular</item>-->
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">@color/app.theme.colorAccent</item>
+    </style>
+
+    <!-- TextAppearance mm-->
+    <style name="App.Theme.TextAppearance.mm">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.tiny">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.tiny</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.small</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.normal</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.large">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.large</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.normal.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.normal.whiteGrey">
+        <item name="android:textColor">@color/app.text.whiteGrey</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.blue2177C7">
+        <item name="android:textColor">@color/app.text.blue2177C7</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mm.black999">
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+    <!-- TextAppearance mw-->
+    <style name="App.Theme.TextAppearance.mw">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.xxxlarge">
+        <item name="android:textSize">@dimen/app.text.xxxlarge</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.tiny">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.tiny</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.mw.tiny.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.small">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.small</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.normal</item>
+    </style>
+    <style name="App.Theme.TextAppearance.mw.normal.black">
+        <item name="android:textColor">@color/app.text.black</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.large">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.large</item>
+
+    </style>
+    <style name="App.Theme.TextAppearance.mw.xxxlarge.black">
+        <item name="android:textColor">@color/app.text.black</item>
+
+    </style><!-- TextAppearance wm-->
+    <style name="App.Theme.TextAppearance.wm">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.tiny">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.tiny</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.small</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.normal</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.large">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.large</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.xlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.xlarge</item>
+    </style>
+    <style name="App.Theme.TextAppearance.wm.xxlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.xxlarge</item>
+    </style>
+    <style name="App.Theme.TextAppearance.wm.xxxlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.xxxlarge</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.xxxxlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:textSize">@dimen/app.text.xxxxlarge</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.normal.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.large.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.xlarge.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+    <style name="App.Theme.TextAppearance.wm.xxlarge.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+    <style name="App.Theme.TextAppearance.wm.xxxlarge.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+    <style name="App.Theme.TextAppearance.wm.xxxxlarge.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.normal.black999">
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.normal.blue2177C7">
+        <item name="android:textColor">@color/app.text.blue2177C7</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.wm.large.black999">
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+    <!-- TextAppearance mw-->
+    <style name="App.Theme.TextAppearance.mw.large.black333">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.large.black">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.black</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.large.back999">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.large.red">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.e23e56</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.normal.black999">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.normal.whiteGrey">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.whiteGrey</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.small.black333">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.mw.small.black999">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.normal.red">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text.e23e56</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.mw.normal.white">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <!-- TextAppearance ww-->
+    <style name="App.Theme.TextAppearance.ww">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.tiny</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny.black">
+        <item name="android:textColor">@color/app.text.black</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny8">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.tiny8</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny8.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny10">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.tiny10</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny10.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.tiny10.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+    <style name="App.Theme.TextAppearance.ww.small">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.small</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.small.red">
+        <item name="android:textColor">@color/app.text.e23e56</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.tiny.red">
+        <item name="android:textColor">@color/app.text.e23e56</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.small.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.small.black666">
+        <item name="android:textColor">@color/app.text.black666</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.small.black999">
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.small.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.small.blue">
+        <item name="android:textColor">@color/app.theme.colorPrimary</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.normal">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.normal</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.normal.white">
+        <item name="android:textColor">@color/app.text</item>
+
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.normal.blue2177C7">
+        <item name="android:textColor">@color/app.text.blue2177C7</item>
+
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.normal.whiteGrey">
+        <item name="android:textColor">@color/app.text.whiteGrey</item>
+
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.normal.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.large.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.normal.black666">
+        <item name="android:textColor">@color/app.text.black666</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.normal.black999">
+        <item name="android:textColor">@color/app.text.black999</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.normal.red">
+        <item name="android:textColor">@color/app.text.e23e56</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.mw.normal.black333">
+        <item name="android:textColor">@color/app.text.black333</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.normal.blue">
+        <item name="android:textColor">@color/app.text.31C5E4</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.normal.blue_2177C7">
+        <item name="android:textColor">@color/app.text.blue2177C7</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.small.blue_2177C7">
+        <item name="android:textColor">@color/app.text.blue2177C7</item>
+    </style>
+    <style name="App.Theme.TextAppearance.ww.normal.blue_00A2F1">
+        <item name="android:textColor">@color/app.text.blue00A2F1</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.large">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.large</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.large.red">
+        <item name="android:textColor">@color/app.text.e23e56</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.large.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.large.blue2177C7">
+        <item name="android:textColor">@color/app.text.blue2177C7</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.xlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.xlarge</item>
+    </style>
+
+
+    <style name="App.Theme.TextAppearance.ww.xlarge.blue2177C7">
+        <item name="android:textColor">@color/app.text.blue2177C7</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.xxlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.xxlarge</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.xxlarge.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.xxxlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.xxxlarge</item>
+    </style>
+    <style name="App.Theme.TextAppearance.ww.xxxlarge.white">
+        <item name="android:textColor">@color/app.text</item>
+    </style>
+
+    <style name="App.Theme.TextAppearance.ww.xxxxlarge">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/app.text.xxxxlarge</item>
+    </style>
+
+
+    //popupWindow弹出动画
+
+    <style name="PopFadeLeftUp">
+        <item name="android:windowEnterAnimation">@anim/fade_left_up_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_left_up_out</item>
+    </style>
+
+    <style name="PopFadeSuspendLeftUp">
+        <item name="android:windowEnterAnimation">@anim/fade_suspend_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_suspend_out</item>
+    </style>
+
+    <style name="PopFadeRightUp">
+        <item name="android:windowEnterAnimation">@anim/fade_left_up_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_left_up_out</item>
+    </style>
+
+    <style name="PopFadeLeftdown">
+        <item name="android:windowEnterAnimation">@anim/fade_left_up_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_left_up_out</item>
+    </style>
+
+    <style name="PopFadeRightDown">
+        <item name="android:windowEnterAnimation">@anim/fade_left_up_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_left_up_out</item>
+    </style>
+
+    <style name="PopFadeCenter">
+        <item name="android:windowEnterAnimation">@anim/fade_center_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_center_out</item>
+    </style>
+
+
+</resources>

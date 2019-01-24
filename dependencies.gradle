@@ -1,0 +1,89 @@
+ext {
+    versionCode = 199
+    versionName = "v2.0.0"
+    minSdkVersion = 21
+    compileSdkVersion = 27
+    targetSdkVersion = 27
+    buildToolsVersion = '27.0.3'
+    supportVersion = '27.1.1'
+    applicationId = "com.letsplott.plott_debug"
+
+
+    compiles = [
+            //lib 依赖
+            supportAppCompat     : "com.android.support:appcompat-v7:${supportVersion}",
+            supportV4            : "com.android.support:support-v4:${supportVersion}",
+            supportDesgin        : "com.android.support:design:${supportVersion}",
+
+            supportRecyclerView  : "com.android.support:recyclerview-v7:${supportVersion}",
+            supportCardView      : "com.android.support:cardview-v7:${supportVersion}",
+            fastJson             : "com.alibaba:fastjson:1.2.35",
+            fastJsonAndroid      : "com.alibaba:fastjson:1.1.60.android",
+            rxandroid            : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            rxjava               : "io.reactivex.rxjava2:rxjava:2.0.9",
+            rxlifecycle          : "com.trello.rxlifecycle2:rxlifecycle-components:2.2.0",
+
+            //app 依赖
+            library              : project(':baseLibrary'),
+            eventbus             : "org.greenrobot:eventbus:3.0.0",
+            permission           : "com.yanzhenjie:permission:1.0.5",
+            butterknife          : "com.jakewharton:butterknife:8.5.1",
+
+            homhomlinLib         : "homhomlin.lib:ptrrv-library:1.3.1",
+            nineoldandroidsLib   : "com.nineoldandroids:library:2.4.0",
+            rippleeffectLib      : "com.github.traex.rippleeffect:library:1.2.3",
+            stetho               : "com.facebook.stetho:stetho:1.5.0",
+            stethoRealm          : "com.uphyca:stetho_realm:2.1.0",
+            exifinterface        : "com.android.support:exifinterface:${supportVersion}",
+            theartofdevDemodo    : "com.theartofdev.edmodo:android-image-cropper:2.4.+",
+            butterknifeCompiler  : "com.jakewharton:butterknife-compiler:8.5.1",
+            rxbinding2           : "com.jakewharton.rxbinding2:rxbinding:2.0.0",
+            rxbinding2Support    : "com.jakewharton.rxbinding2:rxbinding-support-v4:2.0.0",
+            rxbindingAppcompat   : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:2.0.0",
+            rxbindingDesign      : "com.jakewharton.rxbinding2:rxbinding-design:2.0.0",
+            rxbindingRecyclerview: "com.jakewharton.rxbinding2:rxbinding-recyclerview-v7:2.0.0",
+            rxbindingLeanback    : "com.jakewharton.rxbinding2:rxbinding-leanback-v17:2.0.0",
+
+
+            javaxInject          : "javax.inject:javax.inject:1",
+            bindingAdapter       : "me.tatarka.bindingcollectionadapter:bindingcollectionadapter:1.3.0",
+            bindingrecyclerView  : "me.tatarka.bindingcollectionadapter:bindingcollectionadapter-recyclerview:1.3.0",
+            xrecyclerview        : "com.jcodecraeer:xrecyclerview:1.2.7",
+            bottomnavigation     : "com.aurelhubert:ahbottomnavigation:1.3.3",
+            viewpagerIndicator   : "com.mcxiaoke.viewpagerindicator:library:2.4.1",
+            loading              : "com.wang.avi:library:2.1.3",
+            multidex             : "com.android.support:multidex:1.0.1",
+            leakcanary           : "com.squareup.leakcanary:leakcanary-android:1.4",
+            glide                : 'com.github.bumptech.glide:glide:3.6.1',
+            gson                 : 'com.google.code.gson:gson:2.5',
+            dagger               : 'com.google.dagger:dagger:2.4',
+            zxing                : 'com.google.zxing:core:3.3.0',
+            rxpermissions        : 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar',
+            logansquare          : 'com.bluelinelabs:logansquare:1.3.4',
+            logansquareConverter : "com.github.aurae.retrofit2:converter-logansquare:1.4.0",
+            daggerCompiler       : 'com.google.dagger:dagger-compiler:2.2',
+            annotation           : 'org.glassfish:javax.annotation:10.0-b28',
+            arCore               : 'com.google.ar:core:1.6.0',
+            viewpagerIndicator   : "com.mcxiaoke.viewpagerindicator:library:2.4.1",
+//            arCore               : 'com.google.ar:core:1.2.0',
+
+            sceneformCore        : "com.google.ar.sceneform:core:1.3.0",
+            sceneformUx          : "com.google.ar.sceneform.ux:sceneform-ux:1.3.0",
+            gmsPlayService       : "com.google.android.gms:play-services-location:6.5.87",
+            googlePlayServices   : "com.google.android.gms:play-services-appindexing:8.3.0"
+    ]
+
+    release = [
+            leakcanary: 'com.squareup.leakcanary:leakcanary-android-no-op:1.4'
+    ]
+
+    provides = [
+
+    ]
+
+    apts = [
+            logansquareCompiler: 'com.bluelinelabs:logansquare-compiler:1.3.4'
+    ]
+
+}
+

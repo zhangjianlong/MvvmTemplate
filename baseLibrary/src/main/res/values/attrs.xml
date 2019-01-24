@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CirCleRefreshLayout">
+        <attr name="AniBackColor" format="color" />
+        <attr name="AniForeColor" format="color" />
+        <attr name="CircleSmaller" format="integer" />
+    </declare-styleable>
+
+
+    <!-- wheelview -->
+    <declare-styleable name="wheelview">
+        <attr name="wv_gravity">
+            <enum name="wv_center" value="17" />
+            <enum name="wv_left" value="3" />
+            <enum name="wv_right" value="5" />
+        </attr>
+        <attr name="wv_textSize" format="dimension" />
+        <attr name="wv_textColorOut" format="color" />
+        <attr name="wv_textColorCenter" format="color" />
+        <attr name="wv_dividerColor" format="color" />
+    </declare-styleable>
+
+
+    <declare-styleable name="SlideLayout">
+        <attr name="sl_slideSlop" format="dimension" />
+        <attr name="sl_duration" format="integer" />
+    </declare-styleable>
+
+
+    <declare-styleable name="WheelPicker">
+        <attr name="wheel_data" format="reference" />
+        <attr name="wheel_selected_item_position" format="integer" />
+        <attr name="wheel_item_text_size" format="dimension" />
+        <attr name="wheel_item_text_color" format="color" />
+        <attr name="wheel_selected_item_text_color" format="color" />
+        <attr name="wheel_same_width" format="boolean" />
+        <attr name="wheel_maximum_width_text" format="string" />
+        <attr name="wheel_maximum_width_text_position" format="integer" />
+        <attr name="wheel_visible_item_count" format="integer" />
+        <attr name="wheel_item_space" format="dimension" />
+        <attr name="wheel_cyclic" format="boolean" />
+        <attr name="wheel_indicator" format="boolean" />
+        <attr name="wheel_indicator_color" format="color" />
+        <attr name="wheel_indicator_size" format="dimension" />
+        <attr name="wheel_curtain" format="boolean" />
+        <attr name="wheel_curtain_color" format="color" />
+        <attr name="wheel_atmospheric" format="boolean" />
+        <attr name="wheel_curved" format="boolean" />
+        <attr name="wheel_item_align" format="enum">
+            <enum name="center" value="0" />
+            <enum name="left" value="1" />
+            <enum name="right" value="2" />
+        </attr>
+    </declare-styleable>
+
+
+    <!--bottom navigation-->
+    <declare-styleable name="AHBottomNavigationBehavior_Params">
+        <attr name="tabLayoutId" format="reference" />
+        <attr name="selectedBackgroundVisible" format="boolean" />
+        <attr name="translucentNavigationEnabled" format="boolean" />
+    </declare-styleable>
+
+
+
+</resources>

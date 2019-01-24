@@ -1,0 +1,175 @@
+package com.baselibrary.v2.weight.popupWindow;
+
+import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
+import android.util.DisplayMetrics;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.view.WindowManager;
+import android.widget.PopupWindow;
+
+import com.baselibrary.R;
+
+
+/**
+ * @author WangXu
+ * @version 1.0
+ * @description PopupWindow基类
+ * @createDate 2014-11-14
+ */
+public abstract class BasePopupWindow extends PopupWindow {
+
+    protected View anchor;
+    protected View contentView;
+    protected Context context;
+    protected int aniType = -1;
+    protected boolean isCancelable;
+    protected WindowManager windowManager;
+    private boolean popupWindowShow = false;
+
+    public BasePopupWindow(WindowBuilder builder) {
+        super();
+        this.anchor = builder.anchor;
+        this.context = builder.context;
+        this.aniType = builder.aniType;
+        this.isCancelable = builder.isCancelable;
+        iniPopupWindow();
+    }
+
+
+    /**
+     * @description 初始化PopupWindow
+     * @author WangXu
+     * @createDate 2014-11-13
+     * @version 1.0
+     */
+    private void iniPopupWindow() {
+//        this.setFocusable(true);
+        this.setFocusable(false);
+//        setOnDismissListener(new OnDismissListener() {
+//            @Override
+//            public void onDismiss() {
+//                setFocusable(false);
+//            }
+//        });
+        this.setOutsideTouchable(isCancelable);
+        this.setBackgroundDrawable(new ColorDrawable());
+        this.setWidth(LayoutParams.MATCH_PARENT);
+        this.setHeight(LayoutParams.MATCH_PARENT);
+        this.update();
+        windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+        if (aniType < 0) {
+        } else {
+            iniAnimation(aniType);
+        }
+
+    }
+
+
+    /**
+     * @description 设置PopupWindow弹出动画
+     * @author WangXu
+     * @createDate 2014-11-13
+     * @version 1.0
+     */
+    private void iniAnimation(int aniType2) {
+        switch (aniType2) {
+            // aniType 为动画种类 共有四种，
+            // 0 右上角缩放，1 左上角缩放，2 右下角缩放，3 右上角缩放
+            case 0:
+                this.setAnimationStyle(R.style.PopFadeRightUp);
+                break;
+            case 1:
+                this.setAnimationStyle(R.style.PopFadeLeftUp);
+                break;
+            case 2:
+                this.setAnimationStyle(R.style.PopFadeRightDown);
+                break;
+            case 3:
+                this.setAnimationStyle(R.style.PopFadeRightUp);
+                break;
+            case 4:
+                this.setAnimationStyle(R.style.PopFadeSuspendLeftUp);
+                break;
+            case 5:
+                this.setAnimationStyle(R.style.PopFadeCenter);
+            default:
+                break;
+        }
+
+    }
+
+
+    public void show(int i, View anchorView) {
+        if (contentView == null) {
+            return;
+        }
+        popupWindowShow = true;
+        this.anchor = anchorView;
+        int[] location = new int[2];
+        if (anchor != null) {
+            anchor.getLocationOnScreen(location);
+        }
+        int xoffset;
+        DisplayMetrics dm = new DisplayMetrics();
+        windowManager.getDefaultDisplay().getMetrics(dm);
+
+        contentView.measure(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
+        switch (i) {
+            case 0:// 父控件正下方
+                xoffset = anchor.getWidth() / 2 - contentView.getMeasuredWidth() / 2;
+                showAsDropDown(anchor, xoffset, 0);
+                break;
+            case 1:// 父控件正上方
+                xoffset = anchor.getWidth() / 2 - contentView.getMeasuredWidth() / 2;
+                showAtLocation(anchor, Gravity.NO_GRAVITY, location[0] - anchor.getWidth(), location[1] - contentView.getMeasuredHeight());
+                break;
+            case 2:// 父控件左上对齐
+                showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1] - contentView.getMeasuredHeight());
+                break;
+            case 3:// 父控件右上对齐
+                showAtLocation(anchor, Gravity.NO_GRAVITY, location[0] - contentView.getMeasuredWidth() + anchor.getWidth(),
+                        location[1] - contentView.getMeasuredHeight());
+                break;
+            case 4:
+                showAsDropDown(anchor, 0, 0);// 父控件左下对齐
+                break;
+            case 5:
+                xoffset = anchor.getWidth() - contentView.getMeasuredWidth();// 父控件右下对齐
+                showAsDropDown(anchor, xoffset, 0);
+                break;
+            case 6:
+                showAtLocation(anchor, Gravity.CENTER, 0, 0);// 在View中 居中显示
+                break;
+            case 7:
+                showAtLocation(anchor, Gravity.CENTER_HORIZONTAL, 0, 70);// 在View中 顶部显示
+                break;
+            case 8:
+                showAtLocation(anchor, Gravity.NO_GRAVITY, location[0], location[1]);
+                break;
+            case 9:
+//                xoffset = anchor.getWidth() - contentView.getMeasuredWidth();// 父控件右下对齐
+                showAsDropDown(anchor, 0, -20);
+                break;
+            case 10:
+//                xoffset = anchor.getWidth() - contentView.getMeasuredWidth();// 父控件右下对齐
+                showAsDropDown(anchor, -280, 15);
+                break;
+            case 11:
+                showAtLocation(anchor, Gravity.BOTTOM | Gravity.CENTER_HORIZONTAL, 0, 0);
+                break;
+            case 12:// 父控件 pianyi 40
+                xoffset = anchor.getWidth() / 2 - contentView.getMeasuredWidth() / 2;
+                showAsDropDown(anchor, -anchor.getWidth(), 40);
+                break;
+            default:
+                showAsDropDown(anchor, 0, 0);// 父控件左下对齐
+                break;
+        }
+
+    }
+
+
+}
